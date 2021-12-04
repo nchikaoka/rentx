@@ -1,7 +1,6 @@
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
-import { container, inject, injectable } from "tsyringe";
-import { isConstructorToken } from "tsyringe/dist/typings/providers/injection-token";
+import { inject, injectable } from "tsyringe";
 
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 

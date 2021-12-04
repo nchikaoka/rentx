@@ -10,7 +10,7 @@ export async function ensureAuthentication(
   request: Request,
   response: Response,
   next: NextFunction
-) {
+): Promise<void> {
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
