@@ -4,11 +4,11 @@
 
 **Functional Requirement**
 It shall be possible to register a new car.
-It shall be possible to list all categories.
+It shall be possible to list all categories. (check in the Controller)
 
 **Business Rules**
 It shall not be possible to register a car with an already used license plate.
-It shall not be possible to change the license plate of an already registered car.
+It shall not be possible to change the license plate of an already registered car. (check in patching useCase)
 A car shall be registered as available, by default.
 Only an admin user shall be able to register a car.
 
