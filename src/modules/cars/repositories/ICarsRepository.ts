@@ -11,7 +11,7 @@ interface ICreateCarsDTO {
 }
 
 interface ICarsRepository {
-  create(data: ICreateCarsDTO): Promise<void>;
+  create(data: ICreateCarsDTO): Promise<Car>;
   findByLicensePlate(license_plate: string): Promise<Car>;
 }
 
