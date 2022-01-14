@@ -7,7 +7,7 @@ import { AppError } from "@shared/errors/AppError";
 interface IPayload {
   sub: string;
 }
-export async function ensureAuthentication(
+export async function ensureAuthenticated(
   request: Request,
   response: Response,
   next: NextFunction
