@@ -1,14 +1,14 @@
-import { CarsCategoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
+import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
 import { AppError } from "@shared/errors/AppError";
 
 import { CreateCarUseCase } from "./CreateCarUseCase";
 
 let createCarUseCase: CreateCarUseCase;
-let carsRepositoryInMemory: CarsCategoryInMemory;
+let carsRepositoryInMemory: CarsRepositoryInMemory;
 
 describe("Create Car UseCase unitary tests", () => {
   beforeEach(() => {
-    carsRepositoryInMemory = new CarsCategoryInMemory();
+    carsRepositoryInMemory = new CarsRepositoryInMemory();
     createCarUseCase = new CreateCarUseCase(carsRepositoryInMemory);
   });
 
