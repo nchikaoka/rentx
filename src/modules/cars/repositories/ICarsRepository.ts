@@ -1,4 +1,5 @@
 import { Car } from "../infra/typeorm/entities/Car";
+import { Specification } from "../infra/typeorm/entities/Specification";
 
 interface ICreateCarsDTO {
   name: string;
@@ -8,6 +9,8 @@ interface ICreateCarsDTO {
   fine_amount: number;
   brand: string;
   category_id: string;
+  specifications?: Specification[];
+  id?: string;
 }
 
 interface ICarsRepository {
@@ -18,6 +21,7 @@ interface ICarsRepository {
     category_id?: string,
     name?: string
   ): Promise<Car[]>;
+  findById(id: string): Promise<Car>;
 }
 
 export { ICarsRepository, ICreateCarsDTO };

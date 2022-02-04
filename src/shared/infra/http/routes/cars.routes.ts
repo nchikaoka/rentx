@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import { CreateCarController } from "@modules/cars/useCases/createCar/CreateCarController";
+import { JoinSpecToCarController } from "@modules/cars/useCases/joinSpecToCar/JoinSpecToCarController";
 import { ListAvailableCarsController } from "@modules/cars/useCases/listAvailableCars/ListAvailableCarsController";
 
 import { ensureAdmin } from "../middlewares/ensureAdmin";
@@ -10,6 +11,7 @@ const carsRoutes = Router();
 
 const createCarController = new CreateCarController();
 const listAvailableCarsController = new ListAvailableCarsController();
+const joinSpecToCarController = new JoinSpecToCarController();
 
 carsRoutes.post(
   "/",
@@ -18,5 +20,11 @@ carsRoutes.post(
   createCarController.handle
 );
 carsRoutes.get("/available", listAvailableCarsController.handle);
+carsRoutes.post(
+  "/specifications/:id",
+  ensureAuthenticated,
+  ensureAdmin,
+  joinSpecToCarController.handle
+);
 
 export { carsRoutes };

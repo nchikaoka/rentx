@@ -12,6 +12,8 @@ class CarsRepositoryInMemory implements ICarsRepository {
     fine_amount,
     category_id,
     license_plate,
+    specifications,
+    id,
   }: ICreateCarsDTO): Promise<Car> {
     const car = new Car();
     Object.assign(car, {
@@ -22,6 +24,8 @@ class CarsRepositoryInMemory implements ICarsRepository {
       fine_amount,
       category_id,
       license_plate,
+      specifications,
+      id,
     });
     this.repository.push(car);
     return car;
@@ -46,6 +50,10 @@ class CarsRepositoryInMemory implements ICarsRepository {
           (!brand && !category_id && !name))
     );
     return cars;
+  }
+  async findById(id: string): Promise<Car> {
+    const car = await this.repository.find((car) => car.id === id);
+    return car;
   }
 }
 

@@ -30,10 +30,10 @@ User does not need to be logged in the system.
 **Functional requirement**
 It shall be possible to associate a specification to a car.
 It shall be possible to list all specifications.
-It shall be possible to list all cars.
 
 **Business rules**
 It shall not be possible to associate a specification to a not registered car.
+It shall not be possible to associate a non existent specification.
 It shall not be possible to associate a specification to a car that has been already associated to the same specification
 Only an admin user shall be able to associate a specification to a car.
 
