@@ -5,7 +5,7 @@ import {
   ICreateCarsDTO,
 } from "@modules/cars/repositories/ICarsRepository";
 
-import { Car } from "../typeorm/entities/Car";
+import { Car } from "../entities/Car";
 
 class CarsRepository implements ICarsRepository {
   private repository: Repository<Car>;
